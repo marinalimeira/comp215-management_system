@@ -2,12 +2,19 @@ package br.ufal;
 
 import java.util.ArrayList;
 
-public class User implements Comparable<User> {
+public class User {
 
-	protected int id;
-	protected String name;
-	protected String email;
-	protected ArrayList<Resource> allocatedResources;
+	private int id;
+	private String name;
+	private String email;
+	private ArrayList<Resource> allocatedResources;
+	private String type;
+
+	public User(String name, String email, String type) {
+		this.name = name;
+		this.email = email;
+		this.type = type;
+	}
 
 	public int getId() {
 		return id;
@@ -37,6 +44,10 @@ public class User implements Comparable<User> {
 		return allocatedResources;
 	}
 
+	public String getType() {
+		return type;
+	}
+
 	public boolean allocateResource(Resource resource) {
 		if (getResourceByStatus("Em andamento") != null) {
 			System.out.println(
@@ -54,5 +65,9 @@ public class User implements Comparable<User> {
 			}
 		}
 		return null;
+	}
+
+	public String toString() {
+		return id + " - " + type + "\n" + name + "\n" + email;
 	}
 }

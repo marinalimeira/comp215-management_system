@@ -1,6 +1,9 @@
 package br.ufal;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Resource {
 
@@ -10,10 +13,13 @@ public class Resource {
 	private User responsible;
 	private String status;
 	private Activity activity;
+	private DateFormat format;
 
-	public Resource(int id, Date startDateTime, Date endDateTime, User responsible) {
-		this.id = id;
+	public Resource(User responsible, Activity activity) {
 		this.status = "Em processo de alocação";
+		this.responsible = responsible;
+		this.activity = activity;
+		this.format = new SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.US);
 	}
 
 	public int getId() {
@@ -81,5 +87,10 @@ public class Resource {
 
 		}
 		System.out.println("Não foi possível alterar o status!");
+	}
+	
+	public String toString(){
+		return 	id + " - " + status + "\n" + format.format(startDateTime) + " - " + format.format(endDateTime) + "\nResponsável: " + responsible.getName()
+		+ "\nStatus: " + status + " | Atividade: " + activity.getTitle();
 	}
 }
