@@ -52,6 +52,10 @@ public class Database {
 		}
 	}
 	
+	public ArrayList<User> getUsers(){
+		return users;
+	}
+	
 	public Activity getActivityById(int id){
 		for (Activity a : activities) {
 			if (a.getId() == id) {
@@ -65,5 +69,59 @@ public class Database {
 		for (Activity a : activities) {
 			System.out.println(a + "\n");
 		}
+	}
+	
+	public void showActivitiesByType(){
+		int traditional_class = 0;
+		int lecture = 0;
+		int laboratory = 0;
+		
+		for (Activity a : activities) {
+			if (a.getType().equals("Aula tradicional"))
+				traditional_class++;
+			else if (a.getType().equals("Apresentação"))
+				lecture++;
+			else if (a.getType().equals("Laboratório"))
+				laboratory++;
+		}
+		System.out.println("Aula tradicional: " + traditional_class);
+		System.out.println("\nApresentação: " + lecture);
+		System.out.println("\nLaboratório: " + laboratory);
+	}
+	
+	public Resource getResourceById(int id) {
+		for (Resource r : resources) {
+			if (r.getId() == id) {
+				return r;
+			}
+		}
+		return null;
+	}
+	
+	public ArrayList<Resource> getResources() {
+		return resources;
+	}
+	
+	public void showResourcesByStatus() {
+		int in_allocation = 0;
+		int allocated = 0;
+		int on_going = 0;
+		int completed = 0;
+		
+		for (Resource r : resources) {
+			if (r.getStatus().equals("Em processo de alocação"))
+				in_allocation++;
+			else if (r.getStatus().equals("Alocado"))
+				allocated++;
+			else if (r.getStatus().equals("Em andamento"))
+				on_going++;
+			else if (r.getStatus().equals("Concluído"))
+				completed++;
+		}
+		
+		System.out.println("Em processo de alocação: " + in_allocation);
+		System.out.println("\nAlocado: " + allocated);
+		System.out.println("\nEm andamento: " + on_going);
+		System.out.println("\nConcluído: " + completed);
 	}
 }
