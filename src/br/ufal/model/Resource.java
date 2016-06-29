@@ -53,7 +53,7 @@ public class Resource {
 	public void setResponsible(User responsible) {
 		this.responsible = responsible;
 	}
-	
+
 	public Activity getActivity() {
 		return activity;
 	}
@@ -61,8 +61,8 @@ public class Resource {
 	public void setActivity(Activity activity) {
 		this.activity = activity;
 	}
-	
-	public String getStatus(){
+
+	public String getStatus() {
 		return status;
 	}
 
@@ -84,13 +84,14 @@ public class Resource {
 			} else {
 				System.out.println("Adicione uma descrição a atividade antes de atualizar o status.");
 			}
-
+		} else {
+			System.out.println("Não foi possível alterar o status!");
 		}
-		System.out.println("Não foi possível alterar o status!");
 	}
-	
-	public String toString(){
-		return 	id + " - " + status + "\n" + format.format(startDateTime) + " - " + format.format(endDateTime) + "\nResponsável: " + responsible.getName()
-		+ "\nStatus: " + status + " | Atividade: " + activity.getTitle();
+
+	public String toString() {
+		return id + " - " + status + "\n" + format.format(startDateTime) + " - " + format.format(endDateTime)
+				+ "\nResponsável: " + responsible.getName() + "\nStatus: " + status + " | Atividade: "
+				+ activity.getTitle();
 	}
 }

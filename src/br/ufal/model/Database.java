@@ -7,24 +7,26 @@ public class Database {
 	private ArrayList<User> users = new ArrayList<User>();
 	private ArrayList<Activity> activities = new ArrayList<Activity>();
 	private ArrayList<Resource> resources = new ArrayList<Resource>();
-	private int index = 0;
+	private int userIndex = 0;
+	private int activityIndex = 0;
+	private int resourceIndex = 0;
 
 	public static Database getInstance() {
 		return instance;
 	}
 
 	public void addUser(User u) {
-		u.setId(index++);
+		u.setId(userIndex++);
 		users.add(u);
 	}
 	
 	public void addActivity(Activity a) {
-		a.setId(index++);
+		a.setId(activityIndex++);
 		activities.add(a);
 	}
 	
 	public void addResource(Resource r) {
-		r.setId(index++);
+		r.setId(resourceIndex++);
 		resources.add(r);
 	}
 	

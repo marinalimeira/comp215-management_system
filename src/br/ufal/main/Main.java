@@ -1,11 +1,5 @@
-package br.ufal.view;
+package br.ufal.main;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Hashtable;
-import java.util.Locale;
 import java.util.Scanner;
 
 import br.ufal.controller.*;

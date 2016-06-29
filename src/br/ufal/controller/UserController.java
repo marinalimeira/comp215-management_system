@@ -23,7 +23,7 @@ public class UserController {
 		String name = scanner.nextLine();
 		System.out.println("E-mail: ");
 		String email = scanner.nextLine();
-		System.out.println("Tipo:\n1. Aluno\n2. Professor\n3.Pesquisador");
+		System.out.println("Tipo:\n1. Aluno\n2. Professor\n3. Pesquisador");
 		User newUser = new User(name, email, userType.get(scanner.nextInt()));
 		scanner.nextLine();
 		Database.getInstance().addUser(newUser);
