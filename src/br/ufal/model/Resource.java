@@ -1,4 +1,4 @@
-package br.ufal;
+package br.ufal.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

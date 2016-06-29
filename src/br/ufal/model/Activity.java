@@ -1,4 +1,4 @@
-package br.ufal;
+package br.ufal.model;
 
 import java.util.ArrayList;
 
@@ -58,6 +58,10 @@ public class Activity {
 
 	public String getType() {
 		return type;
+	}
+	
+	public void addParticipant(User u){
+		this.participants.add(u);
 	}
 	
 	public String toString(){
